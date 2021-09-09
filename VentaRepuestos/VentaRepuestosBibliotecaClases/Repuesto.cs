@@ -30,5 +30,12 @@ namespace VentaRepuestosBibliotecaClases
                 return _codigo;
             }
         }
+        public Categoria Categoria
+        {
+            get
+            {
+                return _categoria;
+            }
+        }
     }
 }

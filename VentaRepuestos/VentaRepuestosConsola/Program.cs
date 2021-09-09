@@ -15,13 +15,14 @@ namespace VentaRepuestosConsola
         static Program()
         {
             _consolaActiva = true;
-            _tiendaRepuestos = new VentaRepuestos();
+            _tiendaRepuestos = new VentaRepuestos("Ventas el sol", "CABA");
         
         }
     
 
         static void Main(string[] args)
         {
+            
             int opcion;
             while (_consolaActiva)
             {
@@ -126,10 +127,12 @@ namespace VentaRepuestosConsola
             } while (flag == false);
 
             Repuesto rep = new Repuesto(codigo, nombre, precio, stock);
+            rep.Categoria.codigo = 21;
+            rep.Categoria.nombre = "Estandar";
 
             if (_tiendaRepuestos.AgregarRepuesto(rep))
             {
-                Console.WriteLine("Repuesto nuevo agregado");
+                Console.WriteLine("Repuesto nuevo agregado.");
             }
             else
             {
@@ -143,8 +146,8 @@ namespace VentaRepuestosConsola
       
         private static void EliminarRepuesto()
         {
-            Console.WriteLine("Ingrese codigo del repuesto a eliminar");
-            int codigo = Convert.ToInt32(Console.ReadLine());
+            string cod=SolicitarString("Ingrese codigo del repuesto a eliminar");
+            int codigo = ValidacionesHelpers.PedirInt(cod);
             if (_tiendaRepuestos.QuitarRepuesto(codigo))
             {
                 Console.WriteLine("Se ha eliminado el repuesto"+ _tiendaRepuestos.ToString() );
@@ -175,9 +178,5 @@ namespace VentaRepuestosConsola
             return cod++;
         }
 
-        internal static void SolicitarNum(double num)
-        {
-            SolicitarString(Convert.ToString(num));
-        }
     }
 }

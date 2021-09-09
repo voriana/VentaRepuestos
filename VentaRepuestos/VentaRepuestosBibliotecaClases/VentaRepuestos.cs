@@ -13,6 +13,16 @@ namespace VentaRepuestosBibliotecaClases
         private string _nombreComercio;
         private string _direccion;
 
+        public VentaRepuestos()
+        {
+
+        }
+        public VentaRepuestos(string comercio, string direccion)
+        {
+            _nombreComercio = comercio;
+            _direccion = direccion;
+            _listaProductos = new List<Repuesto>();
+        }
 
         public bool AgregarRepuesto(Repuesto repuesto)
         {
@@ -23,20 +33,25 @@ namespace VentaRepuestosBibliotecaClases
             {
                 flag = false;
             }
-            else
+            else if (_listaProductos == null)
             {
-                foreach (var item in _listaProductos)
-                {
-                    if (item.Equals(repuesto))
+                _listaProductos.Add(repuesto);
+                
+            }
+            else 
+            {        // si existe no devuelvo false
+                    foreach (var item in _listaProductos)
                     {
-                        flag = false;
-                        break;
+                        if (item.Equals(repuesto))
+                        {
+                            flag = false;
+                            break;
+                        }
                     }
-                }
-                if (flag)
-                {
-                    _listaProductos.Add(repuesto);
-                }
+                    if (flag)
+                    {
+                        _listaProductos.Add(repuesto);
+                    }
                         
             }
             return flag;
@@ -45,15 +60,24 @@ namespace VentaRepuestosBibliotecaClases
 
         public bool QuitarRepuesto(int codigo)
         {
-            bool flag = false;
-            foreach (var repues in _listaProductos)
+            bool flag = true;
+            if (_listaProductos.Count == 0)
             {
-                
-                if (repues.codigo == codigo)
+                flag = false;
+            }
+            else
+            {
+                foreach (var repues in _listaProductos)
                 {
-                    _listaProductos.Remove(repues);
-                    flag= true;
+
+                    if (repues.codigo == codigo)
+                    {
+                         _listaProductos.Remove(repues);
+                         break;
+                    }
+                    
                 }
+               
             }
             return flag;
         }
