@@ -16,7 +16,7 @@ namespace VentaRepuestosBibliotecaClases
 
         public bool AgregarRepuesto(Repuesto repuesto)
         {
-            bool flag=false;
+            bool flag = true;
 
             // valido que el repuesto no este vacio y no exista
             if (repuesto is null)
@@ -25,15 +25,19 @@ namespace VentaRepuestosBibliotecaClases
             }
             else
             {
-
                 foreach (var item in _listaProductos)
                 {
-                    if (!item.Equals(repuesto))
+                    if (item.Equals(repuesto))
                     {
-                        _listaProductos.Add(repuesto);
-                        flag = true;
+                        flag = false;
+                        break;
                     }
                 }
+                if (flag)
+                {
+                    _listaProductos.Add(repuesto);
+                }
+                        
             }
             return flag;
               

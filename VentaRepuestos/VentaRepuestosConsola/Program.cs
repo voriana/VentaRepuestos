@@ -75,58 +75,66 @@ namespace VentaRepuestosConsola
         private static void NuevoRepuesto()
         {
             int codigo = IncrementarValor(1);
-            string nombre="";
-            double precio = 0;
+            string nombre;
+            double precio=0;
+            string sPrecio;
+            string Sstock;
             int stock=0;
-
             bool flag = false;
+
+            
+            nombre=SolicitarString(" nombre del repuesto: ");
+            
             do
             {
-                 SolicitarString(" nombre del repuesto: ");
-                 nombre = ValidacionesHelpers.ValidarString();
-                      
-                do
+                sPrecio = SolicitarString(" precio del repuesto " + nombre);
+                try
                 {
-                    SolicitarString(" Ingrese precio del repuesto " + nombre);
+                    precio = ValidacionesHelpers.PedirDouble(sPrecio);
+                    flag = true;
+                }
+                catch (SystemException e)
+                {
+                    Console.WriteLine(e.Message);
 
-                    try
+                }
+            } while (flag == false);
+
+
+
+            do
+            {
+                Sstock = SolicitarString("stock del repuesto " + nombre);
+                try
+                {
+                    stock = ValidacionesHelpers.PedirInt(Sstock);
+                    if (ValidacionesHelpers.NumeroPositivo(stock))
                     {
-                        precio = ValidacionesHelpers.PedirDouble();
                         flag = true;
                     }
-                    catch (SystemException e)
+                    else
                     {
-                        Console.WriteLine(e.Message);
-                        flag = false;
+                        Console.WriteLine("Ingrese un numero positivo");
                     }
-
-                } while (flag ==false);
-
-                SolicitarString("stock del repuesto " + nombre);
-                 string Sstock = Console.ReadLine();
-
-                if (ValidacionesHelpers.NumeroPositivo(Sstock))
-                {
-                    stock = Convert.ToInt32(Sstock);
-
-                } else
-                {
-                    Console.WriteLine("Debe ingresa un numero positivo");
                 }
-
-
-            } while (flag == false) ;
-
-                Repuesto rep = new Repuesto(codigo, nombre, 456.70f, stock);
-
-                if (_tiendaRepuestos.AgregarRepuesto(rep))
+                catch(SystemException e)
                 {
-                    Console.WriteLine("Repuesto nuevo agregado");
+                    Console.WriteLine(e.Message);
                 }
-                else
-                {
-                    Console.WriteLine("Error al intentar agregar repuesto");
-                }
+                
+               
+            } while (flag == false);
+
+            Repuesto rep = new Repuesto(codigo, nombre, precio, stock);
+
+            if (_tiendaRepuestos.AgregarRepuesto(rep))
+            {
+                Console.WriteLine("Repuesto nuevo agregado");
+            }
+            else
+            {
+                Console.WriteLine("Error al intentar agregar repuesto");
+            }
 
 
 
@@ -147,9 +155,19 @@ namespace VentaRepuestosConsola
             }
         }
 
-        internal static void SolicitarString(string dato)
+        internal static  string SolicitarString(string dato)
         {
-            Console.WriteLine("Ingrese " + dato);
+            string Esvalido;
+            do
+            {
+                Console.WriteLine("Ingrese " + dato);
+                Esvalido = Console.ReadLine();
+                ValidacionesHelpers.ValidarString(Esvalido);
+
+            } while (Esvalido=="");
+
+            return Esvalido;
+            
         }
 
         internal static int IncrementarValor(int cod)

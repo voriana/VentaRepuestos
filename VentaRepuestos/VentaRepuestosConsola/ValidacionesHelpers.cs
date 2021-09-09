@@ -8,10 +8,10 @@ namespace VentaRepuestosConsola
 {
     class ValidacionesHelpers
     { 
-         internal static bool NumeroPositivo(string dato)
+         internal static bool NumeroPositivo(int dato)
          {
             bool flag = false;
-             if (Convert.ToInt32(dato)>0)
+             if (dato>0)
              {
                 flag=true;
              }
@@ -19,25 +19,28 @@ namespace VentaRepuestosConsola
          }
 
         //validar String 
-        internal static string ValidarString() {
+        internal static string ValidarString(string algo) {
           
-                if (string.IsNullOrEmpty(Console.ReadLine()))
+                if (algo.Equals(string.Empty))
                 {
                     return null;
                 } else
                 {
-                    return Console.ReadLine();
+                    return  algo;
                 }
             
         }
-        internal static double PedirDouble()
+        internal static double PedirDouble(string Snumero)
         {
-            
-            return Convert.ToDouble(Console.ReadLine());
+            return Convert.ToDouble(Snumero);
         }
-      
 
 
+        internal static int PedirInt(string Snumero)
+        {
+
+            return Convert.ToInt32(Snumero);
+        }
 
     }
 }
