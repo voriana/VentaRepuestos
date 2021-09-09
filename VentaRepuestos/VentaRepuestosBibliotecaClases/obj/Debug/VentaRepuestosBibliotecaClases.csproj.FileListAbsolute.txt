@@ -1,0 +1,6 @@
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosBibliotecaClases\bin\Debug\VentaRepuestosBibliotecaClases.dll
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosBibliotecaClases\bin\Debug\VentaRepuestosBibliotecaClases.pdb
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosBibliotecaClases\obj\Debug\VentaRepuestosBibliotecaClases.csproj.AssemblyReference.cache
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosBibliotecaClases\obj\Debug\VentaRepuestosBibliotecaClases.csproj.CoreCompileInputs.cache
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosBibliotecaClases\obj\Debug\VentaRepuestosBibliotecaClases.dll
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosBibliotecaClases\obj\Debug\VentaRepuestosBibliotecaClases.pdb

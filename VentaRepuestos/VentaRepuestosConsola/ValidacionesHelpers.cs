@@ -8,21 +8,32 @@ namespace VentaRepuestosConsola
 {
     class ValidacionesHelpers
     { 
-         internal static int SolicitarInt()
+         internal static bool NumeroPositivo(string dato)
          {
-             return Convert.ToInt32(Console.ReadLine());
+            bool flag = false;
+             if (Convert.ToInt32(dato)>0)
+             {
+                flag=true;
+             }
+            return flag;
          }
 
         //validar String 
         internal static string ValidarString() {
-            if (string.IsNullOrEmpty(Console.ReadLine()))
-            {
-                return null;
-            }else
-            {
-                return Console.ReadLine();
-            }
-        
+          
+                if (string.IsNullOrEmpty(Console.ReadLine()))
+                {
+                    return null;
+                } else
+                {
+                    return Console.ReadLine();
+                }
+            
+        }
+        internal static double PedirDouble()
+        {
+            
+            return Convert.ToDouble(Console.ReadLine());
         }
       
 

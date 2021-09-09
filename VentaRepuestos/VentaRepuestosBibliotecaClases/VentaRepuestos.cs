@@ -16,16 +16,42 @@ namespace VentaRepuestosBibliotecaClases
 
         public bool AgregarRepuesto(Repuesto repuesto)
         {
-            //bool flag;
+            bool flag=false;
+
+            // valido que el repuesto no este vacio y no exista
             if (repuesto is null)
             {
-                return false;
+                flag = false;
             }
             else
             {
-                return true;
+
+                foreach (var item in _listaProductos)
+                {
+                    if (!item.Equals(repuesto))
+                    {
+                        _listaProductos.Add(repuesto);
+                        flag = true;
+                    }
+                }
             }
+            return flag;
               
+        }
+
+        public bool QuitarRepuesto(int codigo)
+        {
+            bool flag = false;
+            foreach (var repues in _listaProductos)
+            {
+                
+                if (repues.codigo == codigo)
+                {
+                    _listaProductos.Remove(repues);
+                    flag= true;
+                }
+            }
+            return flag;
         }
     }
 }

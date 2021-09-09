@@ -13,5 +13,22 @@ namespace VentaRepuestosBibliotecaClases
         private double _precio;
         private int _stock;
         private Categoria _categoria;
+
+        public Repuesto(int codigo, string nombre, double precio, int stock)
+        {
+            _codigo = codigo;
+            _nombre = nombre;
+            _precio = precio;
+            _stock = stock;
+            _categoria = new Categoria();
+        }
+
+        public int codigo
+        {
+            get
+            {
+                return _codigo;
+            }
+        }
     }
 }

@@ -1,0 +1,10 @@
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosConsola\bin\Debug\VentaRepuestosConsola.exe.config
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosConsola\bin\Debug\VentaRepuestosConsola.exe
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosConsola\bin\Debug\VentaRepuestosConsola.pdb
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosConsola\bin\Debug\VentaRepuestosBibliotecaClases.dll
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosConsola\bin\Debug\VentaRepuestosBibliotecaClases.pdb
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosConsola\obj\Debug\VentaRepuestosConsola.csproj.AssemblyReference.cache
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosConsola\obj\Debug\VentaRepuestosConsola.csproj.CoreCompileInputs.cache
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosConsola\obj\Debug\VentaRepuestosConsola.csproj.CopyComplete
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosConsola\obj\Debug\VentaRepuestosConsola.exe
+C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosConsola\obj\Debug\VentaRepuestosConsola.pdb
