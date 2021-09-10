@@ -14,9 +14,12 @@ namespace VentaRepuestosBibliotecaClases
         private int _stock;
         private Categoria _categoria;
 
-        public Repuesto(int codigo, string nombre, double precio, int stock)
+        public Repuesto()
         {
-            _codigo = codigo;
+
+        }
+        public Repuesto( string nombre, double precio, int stock)
+        {
             _nombre = nombre;
             _precio = precio;
             _stock = stock;
@@ -29,6 +32,33 @@ namespace VentaRepuestosBibliotecaClases
             {
                 return _codigo;
             }
+            set
+            {
+                _codigo = value;
+            }
+            
+            
+        }
+        public string nombre
+        {
+            get
+            {
+                return _nombre;
+            }
+        }
+        public double precio
+        {
+            get
+            {
+                return _precio;
+            }
+        }
+        public int stock
+        {
+            get
+            {
+                return _stock;
+            }
         }
         public Categoria Categoria
         {
@@ -37,5 +67,14 @@ namespace VentaRepuestosBibliotecaClases
                 return _categoria;
             }
         }
+
+        public override string ToString()
+        {
+            return string.Format("Codigo: " + this.codigo + Environment.NewLine +
+                "Nombre: " + this.nombre + "Precio:" + this.precio+ Environment.NewLine +
+                "Stock: " + this.stock+ Environment.NewLine+"Nombre Categoria:" + this.Categoria);
+        }
+
+       
     }
 }

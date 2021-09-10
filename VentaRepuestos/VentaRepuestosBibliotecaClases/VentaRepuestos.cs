@@ -28,31 +28,28 @@ namespace VentaRepuestosBibliotecaClases
         {
             bool flag = true;
 
-            // valido que el repuesto no este vacio y no exista
+            // valido que el repuesto no este vacio 
             if (repuesto is null)
             {
                 flag = false;
             }
-            else if (_listaProductos == null)
-            {
-                _listaProductos.Add(repuesto);
-                
-            }
+
             else 
-            {        // si existe no devuelvo false
-                    foreach (var item in _listaProductos)
+            {   
+                
+                foreach (var item in _listaProductos)
+                {
+                    if (item.Equals(repuesto))
                     {
-                        if (item.Equals(repuesto))
-                        {
-                            flag = false;
-                            break;
-                        }
+                        flag = false;// si existe  devuelvo false, para no agregarlo
+                    break;
                     }
-                    if (flag)
-                    {
-                        _listaProductos.Add(repuesto);
-                    }
-                        
+                }
+                if (flag)// si es verdadera, es porque no lo encontro en la lista y lo agrego
+                {
+                    _listaProductos.Add(repuesto);
+                }
+                    
             }
             return flag;
               
@@ -64,6 +61,7 @@ namespace VentaRepuestosBibliotecaClases
             if (_listaProductos.Count == 0)
             {
                 flag = false;
+                
             }
             else
             {
@@ -73,13 +71,23 @@ namespace VentaRepuestosBibliotecaClases
                     if (repues.codigo == codigo)
                     {
                          _listaProductos.Remove(repues);
-                         break;
+                        break;
                     }
                     
                 }
                
             }
             return flag;
+        }
+
+        public int ObtenerMaxCodigo()
+        {
+            int resultado=0;
+            foreach (var item in _listaProductos)
+            {
+                resultado = item.codigo;
+            }
+            return ++resultado;
         }
     }
 }

@@ -75,61 +75,20 @@ namespace VentaRepuestosConsola
 
         private static void NuevoRepuesto()
         {
-            int codigo = IncrementarValor(1);
             string nombre;
-            double precio=0;
-            string sPrecio;
-            string Sstock;
-            int stock=0;
-            bool flag = false;
+            double precio;
+            int stock;
 
-            
-            nombre=SolicitarString(" nombre del repuesto: ");
-            
-            do
-            {
-                sPrecio = SolicitarString(" precio del repuesto " + nombre);
-                try
-                {
-                    precio = ValidacionesHelpers.PedirDouble(sPrecio);
-                    flag = true;
-                }
-                catch (SystemException e)
-                {
-                    Console.WriteLine(e.Message);
+            nombre = ValidacionesHelpers.SolicitarString("nombre");
+            precio = ValidacionesHelpers.PedirDouble("precio");
+            stock = ValidacionesHelpers.PedirInt("stock");
 
-                }
-            } while (flag == false);
+            Repuesto rep = new Repuesto(nombre, precio, stock);
 
-
-
-            do
-            {
-                Sstock = SolicitarString("stock del repuesto " + nombre);
-                try
-                {
-                    stock = ValidacionesHelpers.PedirInt(Sstock);
-                    if (ValidacionesHelpers.NumeroPositivo(stock))
-                    {
-                        flag = true;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Ingrese un numero positivo");
-                    }
-                }
-                catch(SystemException e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-                
-               
-            } while (flag == false);
-
-            Repuesto rep = new Repuesto(codigo, nombre, precio, stock);
+            rep.codigo = _tiendaRepuestos.ObtenerMaxCodigo();
             rep.Categoria.codigo = 21;
             rep.Categoria.nombre = "Estandar";
-
+            
             if (_tiendaRepuestos.AgregarRepuesto(rep))
             {
                 Console.WriteLine("Repuesto nuevo agregado.");
@@ -139,18 +98,15 @@ namespace VentaRepuestosConsola
                 Console.WriteLine("Error al intentar agregar repuesto");
             }
 
-
-
-
         }
       
         private static void EliminarRepuesto()
         {
-            string cod=SolicitarString("Ingrese codigo del repuesto a eliminar");
-            int codigo = ValidacionesHelpers.PedirInt(cod);
+            
+            int codigo = ValidacionesHelpers.PedirInt("codigo repuesto a eliminar");
             if (_tiendaRepuestos.QuitarRepuesto(codigo))
             {
-                Console.WriteLine("Se ha eliminado el repuesto"+ _tiendaRepuestos.ToString() );
+                Console.WriteLine("Se ha eliminado el repuesto"+ _tiendaRepuestos.ToString());
             }
             else
             {
@@ -158,25 +114,9 @@ namespace VentaRepuestosConsola
             }
         }
 
-        internal static  string SolicitarString(string dato)
-        {
-            string Esvalido;
-            do
-            {
-                Console.WriteLine("Ingrese " + dato);
-                Esvalido = Console.ReadLine();
-                ValidacionesHelpers.ValidarString(Esvalido);
+        
 
-            } while (Esvalido=="");
-
-            return Esvalido;
-            
-        }
-
-        internal static int IncrementarValor(int cod)
-        {
-            return cod++;
-        }
+       
 
     }
 }
