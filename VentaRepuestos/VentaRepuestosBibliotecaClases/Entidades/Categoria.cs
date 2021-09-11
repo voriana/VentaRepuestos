@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace VentaRepuestosBibliotecaClases
+namespace VentaRepuestosBibliotecaClases.Entidades
 {
     public class Categoria
     {
@@ -45,6 +45,12 @@ namespace VentaRepuestosBibliotecaClases
             {
                 _nombre = value;
             }
+        }
+
+        public override string ToString()
+        {
+            return $"Codigo: {codigo} -Nombre: {nombre}";
+
         }
     }
 

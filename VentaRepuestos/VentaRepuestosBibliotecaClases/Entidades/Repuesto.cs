@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VentaRepuestosBibliotecaClases
+namespace VentaRepuestosBibliotecaClases.Entidades
 {
     public class Repuesto
     {
@@ -24,6 +24,15 @@ namespace VentaRepuestosBibliotecaClases
             _precio = precio;
             _stock = stock;
             _categoria = new Categoria();
+        }
+
+        public Repuesto(int codigo, string nombre, double precio, int stock, Categoria categoria)
+        {
+            _codigo = codigo;
+            _nombre = nombre;
+            _precio = precio;
+            _stock = stock;
+            _categoria = categoria;
         }
 
         public int codigo
@@ -52,12 +61,20 @@ namespace VentaRepuestosBibliotecaClases
             {
                 return _precio;
             }
+            set
+            {
+                _precio = value;
+            }
         }
         public int stock
         {
             get
             {
                 return _stock;
+            }
+            set
+            {
+                _stock = value;
             }
         }
         public Categoria Categoria
@@ -70,9 +87,9 @@ namespace VentaRepuestosBibliotecaClases
 
         public override string ToString()
         {
-            return string.Format("Codigo: " + this.codigo + Environment.NewLine +
-                "Nombre: " + this.nombre + "Precio:" + this.precio+ Environment.NewLine +
-                "Stock: " + this.stock+ Environment.NewLine+"Nombre Categoria:" + this.Categoria);
+            return "Codigo: " +this.codigo + Environment.NewLine +
+                "Nombre: " + this.nombre + Environment.NewLine+ "Precio:" + this.precio+ Environment.NewLine +
+                "Stock: " + this.stock+ Environment.NewLine+"Categoria\n" + Categoria;
         }
 
        

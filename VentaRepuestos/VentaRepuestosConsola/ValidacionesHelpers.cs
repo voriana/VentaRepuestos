@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace VentaRepuestosConsola
 {
     class ValidacionesHelpers
@@ -11,7 +12,7 @@ namespace VentaRepuestosConsola
          internal static bool NumeroPositivo(int dato)
          {
             bool flag = false;
-             if (dato>0)
+             if (dato>=0)
              {
                 flag=true;
              }
@@ -70,13 +71,13 @@ namespace VentaRepuestosConsola
                 {
                     Console.WriteLine("Dato invalido.");
                 }
-                if (ValidacionesHelpers.NumeroPositivo(resultado))
+                else if(ValidacionesHelpers.NumeroPositivo(resultado))
                 {
                     flag = true;
                 }
                 else
                 {
-                    Console.WriteLine("Dato erroneo. Debe ingresar un valor positivo");
+                    Console.WriteLine("Debe ingresar un valor positivo");
                     flag = false;
                 }
 
@@ -99,13 +100,13 @@ namespace VentaRepuestosConsola
                 {
                     Console.WriteLine("Dato erroneo. Debe ingresar un valor numerico");
                 }
-                if (ValidacionesHelpers.NumeroPositivo(resultado))
+                else if (ValidacionesHelpers.NumeroPositivo(resultado))
                 {
-                    flag = true;
+                    return resultado;
                 }
                 else
                 {
-                    Console.WriteLine("Dato erroneo.Debe ingresar un valor positivo");
+                    Console.WriteLine("Debe ingresar un valor positivo");
                     flag = false;
                 }
             }

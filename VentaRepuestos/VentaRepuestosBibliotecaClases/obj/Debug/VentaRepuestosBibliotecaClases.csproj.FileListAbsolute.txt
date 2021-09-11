@@ -4,3 +4,9 @@ C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestos
 C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosBibliotecaClases\obj\Debug\VentaRepuestosBibliotecaClases.csproj.CoreCompileInputs.cache
 C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosBibliotecaClases\obj\Debug\VentaRepuestosBibliotecaClases.dll
 C:\Users\ov_e90330\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosBibliotecaClases\obj\Debug\VentaRepuestosBibliotecaClases.pdb
+C:\Users\orian\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosBibliotecaClases\bin\Debug\VentaRepuestosBibliotecaClases.dll
+C:\Users\orian\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosBibliotecaClases\bin\Debug\VentaRepuestosBibliotecaClases.pdb
+C:\Users\orian\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosBibliotecaClases\obj\Debug\VentaRepuestosBibliotecaClases.csproj.AssemblyReference.cache
+C:\Users\orian\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosBibliotecaClases\obj\Debug\VentaRepuestosBibliotecaClases.csproj.CoreCompileInputs.cache
+C:\Users\orian\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosBibliotecaClases\obj\Debug\VentaRepuestosBibliotecaClases.dll
+C:\Users\orian\Documents\GitHub\VentaRepuestos\VentaRepuestos\VentaRepuestosBibliotecaClases\obj\Debug\VentaRepuestosBibliotecaClases.pdb
