@@ -32,31 +32,26 @@ namespace VentaRepuestosConsola
         //pedir string
         internal static string SolicitarString(string dato)
         {
-            string Esvalido;
-            do
+            string Esvalido="";
+            bool flag= false;
+            while (!flag)
             {
-                Console.WriteLine("Ingrese " + dato+":");
+                Console.WriteLine("Ingrese " + dato + ":");
                 Esvalido = Console.ReadLine();
-                ValidacionesHelpers.ValidarString(Esvalido);
-
-            } while (Esvalido == "");
-
-            return Esvalido;
-
-        }
-
-        //validar String 
-        internal static string ValidarString(string algo) {
-          
-                if (algo.Equals(string.Empty))
+                if (Esvalido.Equals(string.Empty))
                 {
-                    return null;
-                } else
-                {
-                    return  algo;
+                    Esvalido = "";
                 }
-            
+                else
+                {
+                    flag = true;
+                }
+
+            }
+            return Esvalido;
+     
         }
+
         internal static double PedirDouble(string Snumero)
         {
             double resultado=0;
